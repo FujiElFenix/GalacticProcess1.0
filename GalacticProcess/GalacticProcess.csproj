@@ -176,6 +176,7 @@
     <Folder Include="Modelo\Dao\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Bunifu_UI_v1.5.3.dll" />
     <Content Include="View\Imagenes\admin %281%29.png" />
     <Content Include="View\Imagenes\admin.png" />
     <Content Include="View\Imagenes\arrow-pointing-down.png" />
