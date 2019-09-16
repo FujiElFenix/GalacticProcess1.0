@@ -16,5 +16,15 @@ namespace GalacticProcess.View
         {
             InitializeComponent();
         }
+
+        private void BtnEmpresa1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

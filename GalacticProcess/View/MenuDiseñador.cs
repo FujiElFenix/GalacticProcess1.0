@@ -16,5 +16,17 @@ namespace GalacticProcess.View
         {
             InitializeComponent();
         }
+
+        private void BtnModuloTareas_Click(object sender, EventArgs e)
+        {
+            ModuloTareas MT = new ModuloTareas();
+            MT.Show();
+        }
+
+        private void BtnFlujoTrabajo_Click(object sender, EventArgs e)
+        {
+            FlujoTareas FT = new FlujoTareas();
+            FT.Show();
+        }
     }
 }

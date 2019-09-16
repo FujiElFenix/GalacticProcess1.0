@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace GalacticProcess.View
 {
-    public partial class AgregarUsuario : MetroFramework.Forms.MetroForm
+    public partial class ModuloRoles : MetroFramework.Forms.MetroForm
     {
-        public AgregarUsuario()
+        public ModuloRoles()
         {
             InitializeComponent();
-            
+        }
+
+        private void metroListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

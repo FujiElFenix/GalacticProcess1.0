@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace GalacticProcess.View
 {
-    public partial class MostrarEmpresacs : MetroFramework.Forms.MetroForm
+    public partial class FlujoTareas : MetroFramework.Forms.MetroForm
     {
-        public MostrarEmpresacs()
+        public FlujoTareas()
         {
             InitializeComponent();
         }
 
-        private void BtnEmpresa1_Click(object sender, EventArgs e)
+        private void metroTabPage1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void metroTile2_Click(object sender, EventArgs e)
+        private void metroListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace GalacticProcess.View
 {
-    public partial class MenuPrincipal : MetroFramework.Forms.MetroForm
+    public partial class ModuloUnidades : MetroFramework.Forms.MetroForm
     {
-        public MenuPrincipal()
+        public ModuloUnidades()
         {
             InitializeComponent();
-        }
-
-        private void MTModuloUsuario_Click(object sender, EventArgs e)
-        {
-            ModuloUsuario MU = new ModuloUsuario();
-            MU.Show();
         }
     }
 }

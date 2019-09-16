@@ -14,7 +14,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -64,17 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modelo\Dto\Usuario.cs" />
-    <Compile Include="View\AgregarUsuario.cs">
+    <Compile Include="View\FlujoTareas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AgregarUsuario.Designer.cs">
-      <DependentUpon>AgregarUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\DetalleEmpresa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\DetalleEmpresa.Designer.cs">
-      <DependentUpon>DetalleEmpresa.cs</DependentUpon>
+    <Compile Include="View\FlujoTareas.Designer.cs">
+      <DependentUpon>FlujoTareas.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
@@ -96,17 +90,29 @@
     <Compile Include="View\MenuDiseñador.Designer.cs">
       <DependentUpon>MenuDiseñador.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MenuPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MenuPrincipal.Designer.cs">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\ModuloEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\ModuloEmpresas.Designer.cs">
       <DependentUpon>ModuloEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModuloRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ModuloRoles.Designer.cs">
+      <DependentUpon>ModuloRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModuloTareas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ModuloTareas.Designer.cs">
+      <DependentUpon>ModuloTareas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModuloUnidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ModuloUnidades.Designer.cs">
+      <DependentUpon>ModuloUnidades.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ModuloUsuario.cs">
       <SubType>Form</SubType>
@@ -114,23 +120,8 @@
     <Compile Include="View\ModuloUsuario.Designer.cs">
       <DependentUpon>ModuloUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MostrarEmpresacs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MostrarEmpresacs.Designer.cs">
-      <DependentUpon>MostrarEmpresacs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\RegistroDeEmpresa .cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\RegistroDeEmpresa .Designer.cs">
-      <DependentUpon>RegistroDeEmpresa .cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="View\AgregarUsuario.resx">
-      <DependentUpon>AgregarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\DetalleEmpresa.resx">
-      <DependentUpon>DetalleEmpresa.cs</DependentUpon>
+    <EmbeddedResource Include="View\FlujoTareas.resx">
+      <DependentUpon>FlujoTareas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -148,20 +139,23 @@
     <EmbeddedResource Include="View\MenuAdministrador.resx">
       <DependentUpon>MenuAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MenuPrincipal.resx">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="View\MenuDiseñador.resx">
+      <DependentUpon>MenuDiseñador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ModuloEmpresas.resx">
       <DependentUpon>ModuloEmpresas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ModuloRoles.resx">
+      <DependentUpon>ModuloRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ModuloTareas.resx">
+      <DependentUpon>ModuloTareas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ModuloUnidades.resx">
+      <DependentUpon>ModuloUnidades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ModuloUsuario.resx">
       <DependentUpon>ModuloUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MostrarEmpresacs.resx">
-      <DependentUpon>MostrarEmpresacs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\RegistroDeEmpresa .resx">
-      <DependentUpon>RegistroDeEmpresa .cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -182,9 +176,22 @@
     <Folder Include="Modelo\Dao\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="View\Imagenes\admin %281%29.png" />
+    <Content Include="View\Imagenes\admin.png" />
+    <Content Include="View\Imagenes\arrow-pointing-down.png" />
+    <Content Include="View\Imagenes\arrow-up %281%29.png" />
+    <Content Include="View\Imagenes\arrow-up.png" />
     <Content Include="View\Imagenes\avatar.png" />
     <Content Include="View\Imagenes\lock.png" />
+    <Content Include="View\Imagenes\plus.png" />
+    <Content Include="View\Imagenes\proce.png" />
     <Content Include="View\Imagenes\processaweblogo340x156-1.png" />
+    <Content Include="View\Imagenes\search %281%29.png" />
+    <Content Include="View\Imagenes\search %282%29.png" />
+    <Content Include="View\Imagenes\search.png" />
+    <Content Include="View\Imagenes\student.png" />
+    <Content Include="View\Imagenes\update.png" />
+    <Content Include="View\Imagenes\updated.png" />
     <None Include="View\Imagenes\Logo.jpg" />
     <None Include="View\Imagenes\login.png" />
     <Content Include="View\Imagenes\man.png" />

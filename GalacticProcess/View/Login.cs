@@ -35,6 +35,7 @@ namespace GalacticProcess
             {
                 MetroFramework.MetroMessageBox.Show(this, "\n\nRecuerde Ingresar Credenciales Correctas y LLenar Todos Los Campos", "Error Al Ingresar Al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+           
         }
 
 
@@ -65,6 +66,11 @@ namespace GalacticProcess
         private void metroButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

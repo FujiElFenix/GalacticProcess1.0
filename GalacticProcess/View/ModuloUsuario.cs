@@ -15,44 +15,6 @@ namespace GalacticProcess.View
         public ModuloUsuario()
         {
             InitializeComponent();
-            this.StyleManager = metroStyleManager1;
-        }
-
-       
-
-        private void metroTile1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void MTTema_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (MTTema.SelectedIndex)
-            {
-                case 0:
-                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                    break;
-                case 1:
-                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
-                    break;
-                
-            }
-        }
-
-        private void MCBColor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            metroStyleManager1.Style = (MetroFramework.MetroColorStyle)Convert.ToInt32(MCBColor.SelectedIndex);
-        }
-
-        private void ModuloUsuario_Load(object sender, EventArgs e)
-        {
-            MCBColor.SelectedIndex = 0;
-            MTTema.SelectedIndex = 0;
-        }
-
-        private void metroListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

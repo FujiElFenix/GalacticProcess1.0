@@ -19,14 +19,12 @@ namespace GalacticProcess.View
 
         private void BtnRegistrarEmpresa_Click(object sender, EventArgs e)
         {
-            RegistroDeEmpresa RE = new RegistroDeEmpresa();
-            RE.Show();
+           ;
         }
 
         private void BtnListarEmpresas_Click(object sender, EventArgs e)
         {
-            MostrarEmpresacs ME = new MostrarEmpresacs();
-            ME.Show();
+            
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
@@ -37,6 +35,38 @@ namespace GalacticProcess.View
         private void metroTile1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void metroTile1_Click_2(object sender, EventArgs e)
+        {
+            ModuloEmpresas ME = new ModuloEmpresas();
+            ME.Show();
+        }
+
+        private void MTModuloUnidades_Click(object sender, EventArgs e)
+        {
+            ModuloUnidades MU = new ModuloUnidades();
+            MU.Show();
+
+        }
+
+        private void MTModuloUsuario_Click(object sender, EventArgs e)
+        {
+            ModuloUsuario mus = new ModuloUsuario();
+            mus.Show();
+
+        }
+
+        private void MTModuloRoles_Click(object sender, EventArgs e)
+        {
+            ModuloRoles MR = new ModuloRoles();
+            MR.Show();
+        }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            ModuloTareas mt = new ModuloTareas();
+            mt.Show();
         }
     }
 }

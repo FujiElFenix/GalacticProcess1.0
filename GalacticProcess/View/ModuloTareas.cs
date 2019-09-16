@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GalacticProcess.View
 {
-    public partial class DetalleEmpresa : MetroFramework.Forms.MetroForm
+    public partial class ModuloTareas : MetroFramework.Forms.MetroForm
     {
-        public DetalleEmpresa()
+        public ModuloTareas()
         {
             InitializeComponent();
         }
