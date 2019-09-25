@@ -68,6 +68,7 @@
     <Compile Include="Controlador\DaoEmpresa.cs" />
     <Compile Include="Controlador\Usuario_Controller.cs" />
     <Compile Include="Entidad\Comuna_CL.cs" />
+    <Compile Include="Entidad\Empresa_CL.cs" />
     <Compile Include="Entidad\GiroComercial_CL.cs" />
     <Compile Include="Entidad\TipoUsuario_CL.cs" />
     <Compile Include="Entidad\Usuario_CL.cs" />

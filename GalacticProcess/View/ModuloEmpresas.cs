@@ -15,10 +15,14 @@ namespace GalacticProcess.View
 {
     public partial class ModuloEmpresas : MetroFramework.Forms.MetroForm
     {
+        List<Empresa_CL> empresas;
+        Empresa_Model model; 
+
         public ModuloEmpresas()
         {
             InitializeComponent();
             CargarComboBox();
+            CargarEmpresas();
         }
 
         
@@ -38,7 +42,27 @@ namespace GalacticProcess.View
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
+            Empresa_Model model = new Empresa_Model();
 
+            Empresa_CL empresa = new Empresa_CL();
+            empresa.rut_empresa = TxtRut.Text;
+            empresa.nombre_empresa = TxtNombre.Text;
+            empresa.telefono = int.Parse(TxtTelefono.Text);
+            empresa.email = TxtCorreo.Text;
+            empresa.direccion= TxtDireccion.Text;
+            empresa.id_comuna = int.Parse(cboComuna.SelectedValue.ToString());
+            empresa.id_giro = int.Parse(cboGiro.SelectedValue.ToString());
+
+            bool respuesta = model.RegistrarEmpresa(empresa);
+
+            if (respuesta)
+            {
+                MessageBox.Show("Empresa Registrada");
+            }
+            else
+            {
+                MessageBox.Show("Empresa No Registrada");
+            }
         }
 
 
@@ -55,6 +79,44 @@ namespace GalacticProcess.View
                 nombreImagen = nombreImagen.Remove(0, 1);
                 pbxImgProducto.Tag = nombreImagen;
             }
+        }
+
+        public void CargarEmpresas()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                model = new Empresa_Model();
+                empresas = model.ListarEmpresas();
+                int contador = 0;
+               
+                MGEmpresas.Columns.Add("Rut", "Rut");
+                MGEmpresas.Columns.Add("Nombre", "Nombre");
+                MGEmpresas.Columns.Add("Telefono", "Telefono");
+                MGEmpresas.Columns.Add("Email", "Email");
+
+                if (empresas != null)
+                {
+                    foreach (Empresa_CL empresa in empresas)
+                    {
+                        MGEmpresas.Rows.Add();
+                        DataGridViewRow row = MGEmpresas.Rows[contador];
+                        
+                        row.Cells[0].Value = empresa.rut_empresa;
+                  
+                        row.Cells[1].Value = empresa.rut_empresa;
+                        row.Cells[2].Value = empresa.telefono.ToString();
+
+                        row.Cells[3].Value = empresa.email;
+                        contador++;
+                        
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+
+            } 
         }
 
         public void CargarComboBox()
@@ -82,8 +144,6 @@ namespace GalacticProcess.View
             cboGiro.DataSource = dataSourceGiros;
             cboGiro.DisplayMember = "desc_giro";
             cboGiro.ValueMember = "id_giro";
-
-
         }
     }
 }

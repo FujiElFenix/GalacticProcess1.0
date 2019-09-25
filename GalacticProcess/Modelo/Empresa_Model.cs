@@ -16,9 +16,77 @@ namespace GalacticProcess.Modelo
         List<Comuna_CL> comunas;
         GiroComercial_CL giro;
         List<GiroComercial_CL> giros;
+        Empresa_CL empresa;
+        List<Empresa_CL> empresas;
         public Empresa_Model()
         {
             conexion = new Conexion();
+        }
+
+        public bool RegistrarEmpresa(Empresa_CL empresa)
+        {
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conexion.Conectar();
+                cmd.CommandText = "PKG_EMPRESAS.REGISTRAR_EMPRESA";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("PRM_RUT", OracleType.VarChar).Value = empresa.rut_empresa;
+                cmd.Parameters.Add("PRM_NOM", OracleType.VarChar).Value = empresa.nombre_empresa;
+                cmd.Parameters.Add("PRM_TEL", OracleType.Number).Value = empresa.telefono;
+                cmd.Parameters.Add("PRM_EMAIL", OracleType.VarChar).Value = empresa.email;
+                cmd.Parameters.Add("PRM_DIRECCION", OracleType.VarChar).Value = empresa.direccion;
+                cmd.Parameters.Add("PRM_COM", OracleType.Number).Value = empresa.id_comuna;
+                cmd.Parameters.Add("PRM_GIRO", OracleType.Number).Value = empresa.id_giro;
+
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            } 
+        }
+
+        public List<Empresa_CL> ListarEmpresas()
+        {
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conexion.Conectar();
+                cmd.CommandText = "PKG_EMPRESAS.LISTAR_EMPRESAS";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("EMPRESAS", OracleType.Cursor).Direction = ParameterDirection.Output;
+                OracleDataAdapter adaptador = new OracleDataAdapter();
+                adaptador.SelectCommand = cmd;
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                empresas = new List<Empresa_CL>();
+                foreach (DataRow dr in tabla.Rows)
+                {
+                    empresa = new Empresa_CL()
+                    {
+                        id_empresa = int.Parse(dr[0].ToString()),
+                        rut_empresa = dr[1].ToString(),
+                        nombre_empresa = dr[2].ToString(),
+                        telefono = int.Parse(dr[3].ToString()),
+                        email = dr[4].ToString(),
+                        direccion = dr[5].ToString(),
+                        imagen_empresa = dr[6].ToString(),
+                        id_comuna = int.Parse(dr[7].ToString()),
+                        id_giro = int.Parse(dr[8].ToString())
+                    };
+                    empresas.Add(empresa);
+                }
+                return empresas;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
         public List<Comuna_CL> ListarComunas()
