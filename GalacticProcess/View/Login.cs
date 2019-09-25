@@ -27,7 +27,7 @@ namespace GalacticProcess
             {
                 
                 ora.Open();
-                OracleCommand COMANDO = new OracleCommand
+                OracleCommand COMANDO = new OracleCommand();
             }
             catch (Exception ex)
             {

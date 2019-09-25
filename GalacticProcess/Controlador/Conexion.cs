@@ -14,7 +14,7 @@ namespace GalacticProcess.Controlador
         OracleCommand command = null;
         OracleDataReader reader = null;
 
-        private string oradb = "Data Source=localhost:1521/xe;User Id=galacticfuji;Password=123456";
+        private string oradb = "Data Source=localhost:1521/xe;User Id=galacticfuji;Password=123457";
 
         public DataTable ExecuteQuery(string query)
         {
