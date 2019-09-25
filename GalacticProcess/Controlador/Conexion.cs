@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Odbc;
 using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace GalacticProcess.Controlador
         OracleCommand command = null;
         OracleDataReader reader = null;
 
-        private string oradb = "Data Source=localhost:1521/xe;User Id=galacticfuji;Password=123457";
+        private string oradb = "Data Source=localhost:1521/xe;User Id=PRUEBASPORTAFOLIO;Password=1234";
 
         public DataTable ExecuteQuery(string query)
         {
@@ -78,6 +79,28 @@ namespace GalacticProcess.Controlador
             {
 
                 return 0;
+            }
+        }
+
+        public void ExecFunc(string FUNC, params object[] parametros)
+        {
+            try
+            {
+                OracleConnection con = new OracleConnection(oradb);
+                OracleCommand command = new OracleCommand(FUNC, con);
+                command.CommandType = CommandType.StoredProcedure;
+                OracleParameter param = new OracleParameter();
+                int contador = 0;
+                foreach (OracleParameter pr in command.Parameters)
+                {
+                    pr.Value = parametros[contador];
+                    contador++;
+                }
+                
+            }
+            catch (Exception e)
+            {
+
             }
         }
 

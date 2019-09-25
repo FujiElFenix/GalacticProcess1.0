@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BunifuAnimatorNS;
 using System.Data.OracleClient;
+using GalacticProcess.Controlador;
 
 namespace GalacticProcess
 {
@@ -25,9 +26,22 @@ namespace GalacticProcess
         {
             try
             {
-                
-                ora.Open();
-                OracleCommand COMANDO = new OracleCommand();
+                string user = TxtUsername.Text;
+                string pass = TxtPassword.Text;
+                Usuario_Controller controller = new Usuario_Controller();
+                int validacion_usuario = controller.ValidarUsuario(user, pass);
+                if (validacion_usuario == 1)
+                {
+                    MessageBox.Show("Admin");
+                }
+                else if (validacion_usuario == 2)
+                {
+                    MessageBox.Show("Diseñador");
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña inválida");
+                }
             }
             catch (Exception ex)
             {

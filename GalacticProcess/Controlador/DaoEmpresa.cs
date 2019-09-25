@@ -21,8 +21,8 @@ namespace GalacticProcess.Controlador
                 con = new Conexion();
                 int respuesta = 0;
                 object[] parametros = new object[7];
-                parametros[0] = nombreImagen.ToString();
-                parametros[1] = nombreProducto.ToString();
+                //parametros[0] = nombreImagen.ToString();
+                //parametros[1] = nombreProducto.ToString();
                 parametros[2] = descripcion.ToString();
                 parametros[3] = valor;
                 parametros[4] = t_preparacion;
