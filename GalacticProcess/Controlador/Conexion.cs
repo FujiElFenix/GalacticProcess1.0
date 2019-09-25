@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Oracle.ManagedDataAccess.Client;
 
 namespace GalacticProcess.Controlador
 {
@@ -14,7 +14,7 @@ namespace GalacticProcess.Controlador
         OracleCommand command = null;
         OracleDataReader reader = null;
 
-        private string oradb = "Data Source=localhost:1521/xe;User Id=galacticfuji;Password=123456";
+        private string oradb = "Data Source=localhost:1521/xe;User Id=galacticfuji;Password=1234";
 
         public DataTable ExecuteQuery(string query)
         {

@@ -49,10 +49,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <HintPath>..\packages\Oracle.ManagedDataAccess.19.3.1\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
@@ -69,8 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\Conexion.cs" />
+    <Compile Include="Controlador\DaoComuna.cs" />
     <Compile Include="Controlador\DaoEmpresa.cs" />
-    <Compile Include="Modelo\Dto\Usuario.cs" />
+    <Compile Include="Modelo\Comuna_CL.cs" />
+    <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="View\FlujoTareas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modelo\Dao\" />
+    <Folder Include="Modelo\Dto\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Bunifu_UI_v1.5.3.dll" />

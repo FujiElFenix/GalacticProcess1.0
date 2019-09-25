@@ -35,9 +35,9 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.pbxImgProducto = new System.Windows.Forms.PictureBox();
             this.BtnExaminar = new MetroFramework.Controls.MetroButton();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.CboGiroComercial = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.cboComuna = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.TxtTelefono = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
@@ -112,9 +112,9 @@
             // 
             this.metroPanel1.Controls.Add(this.pbxImgProducto);
             this.metroPanel1.Controls.Add(this.BtnExaminar);
-            this.metroPanel1.Controls.Add(this.metroComboBox2);
+            this.metroPanel1.Controls.Add(this.CboGiroComercial);
             this.metroPanel1.Controls.Add(this.metroLabel14);
-            this.metroPanel1.Controls.Add(this.metroComboBox1);
+            this.metroPanel1.Controls.Add(this.cboComuna);
             this.metroPanel1.Controls.Add(this.metroLabel13);
             this.metroPanel1.Controls.Add(this.TxtTelefono);
             this.metroPanel1.Controls.Add(this.metroLabel12);
@@ -160,15 +160,15 @@
             this.BtnExaminar.UseSelectable = true;
             this.BtnExaminar.Click += new System.EventHandler(this.metroButton2_Click);
             // 
-            // metroComboBox2
+            // CboGiroComercial
             // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Location = new System.Drawing.Point(455, 80);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(121, 29);
-            this.metroComboBox2.TabIndex = 25;
-            this.metroComboBox2.UseSelectable = true;
+            this.CboGiroComercial.FormattingEnabled = true;
+            this.CboGiroComercial.ItemHeight = 23;
+            this.CboGiroComercial.Location = new System.Drawing.Point(455, 80);
+            this.CboGiroComercial.Name = "CboGiroComercial";
+            this.CboGiroComercial.Size = new System.Drawing.Size(121, 29);
+            this.CboGiroComercial.TabIndex = 25;
+            this.CboGiroComercial.UseSelectable = true;
             // 
             // metroLabel14
             // 
@@ -179,15 +179,15 @@
             this.metroLabel14.TabIndex = 24;
             this.metroLabel14.Text = "Giro Comercial: ";
             // 
-            // metroComboBox1
+            // cboComuna
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(455, 45);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
-            this.metroComboBox1.TabIndex = 23;
-            this.metroComboBox1.UseSelectable = true;
+            this.cboComuna.FormattingEnabled = true;
+            this.cboComuna.ItemHeight = 23;
+            this.cboComuna.Location = new System.Drawing.Point(455, 45);
+            this.cboComuna.Name = "cboComuna";
+            this.cboComuna.Size = new System.Drawing.Size(121, 29);
+            this.cboComuna.TabIndex = 23;
+            this.cboComuna.UseSelectable = true;
             // 
             // metroLabel13
             // 
@@ -809,9 +809,9 @@
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private MetroFramework.Controls.MetroButton BtnModificar;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private MetroFramework.Controls.MetroComboBox CboGiroComercial;
         private MetroFramework.Controls.MetroLabel metroLabel14;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroComboBox cboComuna;
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroTextBox TxtTelefono;
         private MetroFramework.Controls.MetroLabel metroLabel12;

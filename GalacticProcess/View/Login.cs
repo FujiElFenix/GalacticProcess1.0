@@ -23,20 +23,7 @@ namespace GalacticProcess
         OracleConnection ora = new OracleConnection("DATA SOURCE = ex; PASSWORD = 1234; USER ID = galacticfuji;");
         private void Bttn_Login_Click(object sender, EventArgs e)
         {
-            try
-            {
-                
-                ora.Open();
-                OracleCommand COMANDO = new OracleCommand
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("No Conectado"+ ex.Message);
-            }
-            
-            
-
+           
         }
 
 
