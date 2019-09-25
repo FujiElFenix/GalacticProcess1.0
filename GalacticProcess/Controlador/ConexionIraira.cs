@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace GalacticProcess.Controlador
 {
-    class Conexion
+    class ConexionIraira
     {
         OracleConnection connection = null;
         OracleCommand command = null;
         OracleDataReader reader = null;
 
-        private string oradb = "Data Source=localhost:1521/xe;User Id=PRUEBASPORTAFOLIO;Password=1234";
+        private string oradb = "Data Source=localhost:1521/xe;User Id=galacticfuji;Password=1234";
 
         public DataTable ExecuteQuery(string query)
         {

@@ -941,6 +941,7 @@
             this.Name = "ModuloEmpresas";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Modulo Empresas";
+            this.Load += new System.EventHandler(this.ModuloEmpresas_Load);
             this.RegistrarEmpresa.ResumeLayout(false);
             this.RegistrarEmpresas.ResumeLayout(false);
             this.metroPanel1.ResumeLayout(false);

@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
@@ -11,19 +12,41 @@ namespace GalacticProcess.Modelo
     public class Conexion
     {
         OracleConnection connection = null;
+        OracleCommand command = null;
+        OracleDataReader reader = null;
 
-        private string oradb = "Data Source=localhost:1521/xe;User Id=PRUEBASPORTAFOLIO2;Password=1234";
+        private string oradb = "Data Source=localhost:1521/xe;User Id=galacticfuji;Password=1234";
 
-        public OracleConnection Conectar()
+        public DataTable ExecuteQuery(string query)
         {
+            connection = new OracleConnection(oradb);
             try
             {
-                connection = new OracleConnection(oradb);
                 connection.Open();
-                return connection;
-            }catch(Exception e)
+                OracleCommand selectCommand = new OracleCommand(query, connection);
+                selectCommand.CommandType = CommandType.Text;
+                OracleDataAdapter oracleDataAdapter = new OracleDataAdapter(selectCommand);
+                DataTable dt = new DataTable();
+                oracleDataAdapter.Fill(dt);
+                selectCommand.Dispose();
+                oracleDataAdapter.Dispose();
+                if (dt.Rows.Count > 0)
+                {
+                    return dt;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
             {
+
                 return null;
+            }
+            finally
+            {
+                connection.Close();
             }
         }
         public void CerrarConexion()
@@ -38,4 +61,5 @@ namespace GalacticProcess.Modelo
             }
         }
     }
+
 }
