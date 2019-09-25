@@ -759,6 +759,7 @@
             this.Controls.Add(this.RegistrarEmpresa);
             this.Name = "ModuloEmpresas";
             this.Text = "Modulo Empresas";
+            this.Load += new System.EventHandler(this.ModuloEmpresas_Load);
             this.RegistrarEmpresa.ResumeLayout(false);
             this.RegistrarEmpresas.ResumeLayout(false);
             this.metroPanel1.ResumeLayout(false);

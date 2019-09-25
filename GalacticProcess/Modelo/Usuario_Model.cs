@@ -30,7 +30,7 @@ namespace GalacticProcess.Modelo
                 cmd.Parameters.Add("PRM_PASS", usuario.Password);
                 cmd.Parameters.Add("TIPO_USUARIO", OracleType.Number);
                 cmd.Parameters["TIPO_USUARIO"].Direction = ParameterDirection.ReturnValue;
-                cmd.Connection = conexion.Conectar();
+               // cmd.Connection = conexion.Conectar();
                 cmd.ExecuteNonQuery();
                 int tipo_usuario = int.Parse(Convert.ToString(cmd.Parameters["TIPO_USUARIO"].Value));
                 return tipo_usuario;

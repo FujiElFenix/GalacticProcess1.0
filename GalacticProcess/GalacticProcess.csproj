@@ -64,9 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controlador\Conexion.cs" />
+    <Compile Include="Controlador\ComunaDao.cs" />
+    <Compile Include="Controlador\ConexionIraira.cs" />
     <Compile Include="Controlador\DaoEmpresa.cs" />
     <Compile Include="Controlador\Usuario_Controller.cs" />
+    <Compile Include="Entidad\Comuna_CL.cs" />
     <Compile Include="Entidad\TipoUsuario_CL.cs" />
     <Compile Include="Entidad\Usuario_CL.cs" />
     <Compile Include="Modelo\Conexion.cs" />

@@ -1,10 +1,12 @@
 ﻿using GalacticProcess.Controlador;
+using GalacticProcess.Entidad;
 using GalacticProcess.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OracleClient;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -67,16 +69,16 @@ namespace GalacticProcess.View
         private void CargarComboBox()
         {
             //Cargo los Comuna
-            DaoComuna daoCom = new DaoComuna();
+            ComunaDao daoCom = new ComunaDao();
             List<Comuna_CL> Comunas = new List<Comuna_CL>();
             Comunas = (List<Comuna_CL>)daoCom.ObtenerComuna();
-            var dataSourceProveedor = new List<Comuna_CL>();
+            var dataSourceComuna = new List<Comuna_CL>();
             foreach (Comuna_CL item in Comunas)
             {
-                dataSourceProveedor.Add(new Comuna_CL() { NOMBRE_COMUNA = item.NOMBRE_COMUNA, ID_COMUNA = item.ID_COMUNA });
+                dataSourceComuna.Add(new Comuna_CL() { NOMBRE_COMUNA = item.NOMBRE_COMUNA, ID_COMUNA = item.ID_COMUNA });
             }
-            cboComuna.DataSource = dataSourceProveedor;
-            cboComuna.DisplayMember = "NOMBRE_COMUNA";
+            cboComuna.DataSource = dataSourceComuna;
+            cboComuna.DisplayMember = "NOMBRE_COMUNA"; 
             cboComuna.ValueMember = "ID_COMUNA";
             //Cargo Giro Comercial
             
@@ -93,6 +95,20 @@ namespace GalacticProcess.View
                 nombreImagen = nombreImagen.Remove(0, 1);
                 pbxImgProducto.Tag = nombreImagen;
             }
+        }
+       OracleConnection ora =new OracleConnection("Data Source=localhost:1521/xe;User Id=galacticfuji;Password=1234");
+        private void ModuloEmpresas_Load(object sender, EventArgs e)
+        {
+
+            ora.Open();
+            OracleCommand comando = new OracleCommand("SELECT  FROM COMUNA", ora);
+            comando.CommandType = System.Data.CommandType.TableDirect;
+            OracleDataReader registro = comando.ExecuteReader();
+            while (registro.Read())
+            {
+                cboComuna.Items.Add(registro["NOMBRE_COMUNA"].ToString());
+            }
+            ora.Close();
         }
     }
 }
