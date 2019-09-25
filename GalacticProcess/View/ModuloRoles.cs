@@ -19,7 +19,7 @@ namespace GalacticProcess.View
 
         private void metroListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            akjfkjdhfkjahdkfjha pipe gay
+
         }
     }
 }

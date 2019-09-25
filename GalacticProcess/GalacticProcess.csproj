@@ -51,6 +51,7 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -63,12 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MenuFunciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuFunciones.Designer.cs">
-      <DependentUpon>MenuFunciones.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\Dto\Usuario.cs" />
     <Compile Include="View\FlujoTareas.cs">
       <SubType>Form</SubType>

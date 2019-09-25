@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BunifuAnimatorNS;
+using System.Data.OracleClient;
 
 namespace GalacticProcess
 {
@@ -19,23 +20,23 @@ namespace GalacticProcess
             InitializeComponent();
         }
 
+        OracleConnection ora = new OracleConnection("DATA SOURCE = ex; PASSWORD = 1234; USER ID = galacticfuji;");
         private void Bttn_Login_Click(object sender, EventArgs e)
         {
-            if (TxtUsername.Text == "Admin" && TxtPassword.Text == "Admin")
+            try
             {
-                MenuAdministrador ma = new MenuAdministrador();
-                ma.Show();
+                
+                ora.Open();
+                OracleCommand COMANDO = new OracleCommand
             }
-            else if (TxtUsername.Text == "Diseñador" && TxtPassword.Text == "Diseñador")
+            catch (Exception ex)
             {
-                MenuDiseñador md = new MenuDiseñador();
-                md.Show();
+
+                MessageBox.Show("No Conectado"+ ex.Message);
             }
-            else
-            {
-                MetroFramework.MetroMessageBox.Show(this, "\n\nRecuerde Ingresar Credenciales Correctas y LLenar Todos Los Campos", "Error Al Ingresar Al Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-           
+            
+            
+
         }
 
 
