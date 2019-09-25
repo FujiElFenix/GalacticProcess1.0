@@ -49,6 +49,17 @@ namespace GalacticProcess.Modelo
                 connection.Close();
             }
         }
+        public void CerrarConexion()
+        {
+            try
+            {
+                connection = new OracleConnection(oradb);
+            }
+            catch (Exception e)
+            {
+                
+            }
+        }
     }
 
 }

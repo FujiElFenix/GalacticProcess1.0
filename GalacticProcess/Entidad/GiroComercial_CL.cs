@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace GalacticProcess.Entidad
 {
-    public class Comuna_CL
+    public class GiroComercial_CL
     {
-        public int id_comuna { get; set; }
-        public string nombre_comuna { get; set; }
-        public Comuna_CL()
+        public int id_giro { get; set; }
+        public string desc_giro { get; set; }
+        public GiroComercial_CL()
         {
 
         }

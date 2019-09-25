@@ -1,12 +1,10 @@
-﻿using GalacticProcess.Controlador;
-using GalacticProcess.Entidad;
+﻿using GalacticProcess.Entidad;
 using GalacticProcess.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OracleClient;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,8 +15,6 @@ namespace GalacticProcess.View
 {
     public partial class ModuloEmpresas : MetroFramework.Forms.MetroForm
     {
-        private DaoEmpresa daoEmpresa;
-
         public ModuloEmpresas()
         {
             InitializeComponent();
@@ -29,6 +25,10 @@ namespace GalacticProcess.View
         private void BtnEmpresa1_Click(object sender, EventArgs e)
         {
             
+
+
+
+           
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
@@ -38,51 +38,11 @@ namespace GalacticProcess.View
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
-            daoEmpresa = new DaoEmpresa();
-            
-            string rutRutEmpresa = TxtRut.Text;
-            string NombreEmpresa = TxtNombre.Text;
-            int TelefonoEmpresa = int.Parse(TxtTelefono.Text);
-            string EmailEmpresa = TxtCorreo.Text;
-            string DireccionEmpresa = TxtDireccion.Text;
-            string nombreImagen = pbxImgProducto.Tag.ToString();
-            int Comuna = int.Parse(cboComuna.SelectedValue.ToString());
-            int GiroComercial = int.Parse(CboGiroComercial.SelectedValue.ToString());
 
-
-
-            int respuesta = daoEmpresa.RegistrarEmpresa(rutRutEmpresa, NombreEmpresa, TelefonoEmpresa, EmailEmpresa, DireccionEmpresa, nombreImagen, Comuna, GiroComercial);
-            if (respuesta == 1)
-            {
-                MessageBox.Show("Empresa Registrado");
-                Bitmap b = new Bitmap(pbxImgProducto.Image);
-                string path = @"C:\Users\Pipe Feanco\Desktop\Ultimo semestre\Portafolio\EscritorioC#\GalacticProcess\GalacticProcess\View\Imagenes\" + nombreImagen;
-                b.Save(path);
-               
-            }
-            else
-            {
-                MessageBox.Show("No se ha podido registrar la Empresa");
-            }
         }
 
-        private void CargarComboBox()
-        {
-            //Cargo los Comuna
-            ComunaDao daoCom = new ComunaDao();
-            List<Comuna_CL> Comunas = new List<Comuna_CL>();
-            Comunas = (List<Comuna_CL>)daoCom.ObtenerComuna();
-            var dataSourceComuna = new List<Comuna_CL>();
-            foreach (Comuna_CL item in Comunas)
-            {
-                dataSourceComuna.Add(new Comuna_CL() { NOMBRE_COMUNA = item.NOMBRE_COMUNA, ID_COMUNA = item.ID_COMUNA });
-            }
-            cboComuna.DataSource = dataSourceComuna;
-            cboComuna.DisplayMember = "NOMBRE_COMUNA"; 
-            cboComuna.ValueMember = "ID_COMUNA";
-            //Cargo Giro Comercial
-            
-        }
+
+
         private void metroButton2_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -96,19 +56,34 @@ namespace GalacticProcess.View
                 pbxImgProducto.Tag = nombreImagen;
             }
         }
-       OracleConnection ora =new OracleConnection("Data Source=localhost:1521/xe;User Id=galacticfuji;Password=1234");
-        private void ModuloEmpresas_Load(object sender, EventArgs e)
-        {
 
-            ora.Open();
-            OracleCommand comando = new OracleCommand("SELECT  FROM COMUNA", ora);
-            comando.CommandType = System.Data.CommandType.TableDirect;
-            OracleDataReader registro = comando.ExecuteReader();
-            while (registro.Read())
+        public void CargarComboBox()
+        {
+            //Cargar Comunas
+            Empresa_Model model = new Empresa_Model();
+            List<Comuna_CL> comunas = new List<Comuna_CL>();
+            var dataSourceComunas = new List<Comuna_CL>();
+            comunas = model.ListarComunas();
+            foreach (Comuna_CL item in comunas)
             {
-                cboComuna.Items.Add(registro["NOMBRE_COMUNA"].ToString());
+                dataSourceComunas.Add(new Comuna_CL() { id_comuna = item.id_comuna, nombre_comuna= item.nombre_comuna});
             }
-            ora.Close();
+            cboComuna.DataSource = dataSourceComunas;
+            cboComuna.DisplayMember = "nombre_comuna";
+            cboComuna.ValueMember = "id_comuna";
+            //Cargar Giros
+            List<GiroComercial_CL> giros = new List<GiroComercial_CL>();
+            var dataSourceGiros = new List<GiroComercial_CL>();
+            giros = model.ListarGiros();
+            foreach (GiroComercial_CL item in giros)
+            {
+                dataSourceGiros.Add(new GiroComercial_CL() { id_giro = item.id_giro, desc_giro = item.desc_giro });
+            }
+            cboGiro.DataSource = dataSourceGiros;
+            cboGiro.DisplayMember = "desc_giro";
+            cboGiro.ValueMember = "id_giro";
+
+
         }
     }
 }

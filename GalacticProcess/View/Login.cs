@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BunifuAnimatorNS;
 using System.Data.OracleClient;
+using GalacticProcess.Controlador;
 
 namespace GalacticProcess
 {
@@ -19,11 +20,42 @@ namespace GalacticProcess
         {
             InitializeComponent();
         }
-
-        OracleConnection ora = new OracleConnection("DATA SOURCE = ex; PASSWORD = 1234; USER ID = galacticfuji;");
+        
         private void Bttn_Login_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                string user = TxtUsername.Text;
+                string pass = TxtPassword.Text;
+                Usuario_Controller controller = new Usuario_Controller();
+                int validacion_usuario = controller.ValidarUsuario(user, pass);
+                if (validacion_usuario == 1)
+                {
+                    MenuAdministrador administrador = new MenuAdministrador();
+                    this.Hide();
+                    administrador.Show();
+                    MessageBox.Show("Bienvenido Administrador!");
+                }
+                else if (validacion_usuario == 2)
+                {
+                    MenuDiseñador diseñador = new MenuDiseñador();
+                    this.Hide();
+                    diseñador.Show();
+                    MessageBox.Show("Bienvenido Diseñador!");
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña inválida");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No Conectado"+ ex.Message);
+            }
+            
+            
+
         }
 
 

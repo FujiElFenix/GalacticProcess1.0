@@ -64,14 +64,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controlador\ComunaDao.cs" />
-    <Compile Include="Controlador\ConexionIraira.cs" />
+    <Compile Include="Controlador\Conexion.cs" />
     <Compile Include="Controlador\DaoEmpresa.cs" />
     <Compile Include="Controlador\Usuario_Controller.cs" />
     <Compile Include="Entidad\Comuna_CL.cs" />
+    <Compile Include="Entidad\GiroComercial_CL.cs" />
     <Compile Include="Entidad\TipoUsuario_CL.cs" />
     <Compile Include="Entidad\Usuario_CL.cs" />
     <Compile Include="Modelo\Conexion.cs" />
+    <Compile Include="Modelo\Empresa_Model.cs" />
     <Compile Include="Modelo\Usuario_Model.cs" />
     <Compile Include="View\FlujoTareas.cs">
       <SubType>Form</SubType>
