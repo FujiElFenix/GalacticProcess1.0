@@ -33,6 +33,8 @@
             this.RegistrarEmpresa = new MetroFramework.Controls.MetroTabControl();
             this.RegistrarEmpresas = new MetroFramework.Controls.MetroTabPage();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.pbxImgProducto = new System.Windows.Forms.PictureBox();
+            this.BtnExaminar = new MetroFramework.Controls.MetroButton();
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
@@ -70,16 +72,14 @@
             this.BtnStar = new MetroFramework.Controls.MetroTile();
             this.BtnEasy = new MetroFramework.Controls.MetroTile();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.BtnExaminar = new MetroFramework.Controls.MetroButton();
-            this.pbxImgProducto = new System.Windows.Forms.PictureBox();
             this.RegistrarEmpresa.SuspendLayout();
             this.RegistrarEmpresas.SuspendLayout();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImgProducto)).BeginInit();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel3.SuspendLayout();
             this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImgProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // RegistrarEmpresa
@@ -138,6 +138,27 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // pbxImgProducto
+            // 
+            this.pbxImgProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbxImgProducto.Location = new System.Drawing.Point(306, 105);
+            this.pbxImgProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.pbxImgProducto.Name = "pbxImgProducto";
+            this.pbxImgProducto.Size = new System.Drawing.Size(118, 130);
+            this.pbxImgProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxImgProducto.TabIndex = 27;
+            this.pbxImgProducto.TabStop = false;
+            // 
+            // BtnExaminar
+            // 
+            this.BtnExaminar.Location = new System.Drawing.Point(170, 137);
+            this.BtnExaminar.Name = "BtnExaminar";
+            this.BtnExaminar.Size = new System.Drawing.Size(113, 23);
+            this.BtnExaminar.TabIndex = 26;
+            this.BtnExaminar.Text = "Examinar";
+            this.BtnExaminar.UseSelectable = true;
+            this.BtnExaminar.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroComboBox2
             // 
@@ -730,27 +751,6 @@
             // 
             this.metroStyleManager1.Owner = null;
             // 
-            // BtnExaminar
-            // 
-            this.BtnExaminar.Location = new System.Drawing.Point(170, 137);
-            this.BtnExaminar.Name = "BtnExaminar";
-            this.BtnExaminar.Size = new System.Drawing.Size(113, 23);
-            this.BtnExaminar.TabIndex = 26;
-            this.BtnExaminar.Text = "Examinar";
-            this.BtnExaminar.UseSelectable = true;
-            this.BtnExaminar.Click += new System.EventHandler(this.metroButton2_Click);
-            // 
-            // pbxImgProducto
-            // 
-            this.pbxImgProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxImgProducto.Location = new System.Drawing.Point(306, 115);
-            this.pbxImgProducto.Margin = new System.Windows.Forms.Padding(2);
-            this.pbxImgProducto.Name = "pbxImgProducto";
-            this.pbxImgProducto.Size = new System.Drawing.Size(118, 130);
-            this.pbxImgProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxImgProducto.TabIndex = 27;
-            this.pbxImgProducto.TabStop = false;
-            // 
             // ModuloEmpresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -763,13 +763,13 @@
             this.RegistrarEmpresas.ResumeLayout(false);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImgProducto)).EndInit();
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();
             this.metroPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImgProducto)).EndInit();
             this.ResumeLayout(false);
 
         }
