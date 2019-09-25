@@ -14,22 +14,28 @@ namespace GalacticProcess.Controlador
 
         }
 
-        public int RegistrarEmpresa(string RutEmpresa, string NombreEmpresa, int TelefonoEmpresa, string EmailEmpresa, string DireccionEmpresa, string nombreImagen, int Comuna, int GiroComercial)
+        public int RegistrarEmpresa(string RutEmpresa, string NombreEmpresa, string descripcion, int valor, int t_preparacion, int tipo_producto, int proveedor)
         {
             try
             {
                 con = new Conexion();
                 int respuesta = 0;
-                object[] parametros = new object[8];
-                parametros[0] = RutEmpresa.ToString();
-                parametros[1] = NombreEmpresa.ToString();
-                parametros[2] = TelefonoEmpresa;
-                parametros[3] = EmailEmpresa.ToString();
-                parametros[4] = DireccionEmpresa.ToString();
-                parametros[5] = nombreImagen.ToString();
-                parametros[6] = Comuna;
-                parametros[6] = GiroComercial;
-                
+                object[] parametros = new object[7];
+                //parametros[0] = nombreImagen.ToString();
+                //parametros[1] = nombreProducto.ToString();
+                parametros[2] = descripcion.ToString();
+                parametros[3] = valor;
+                parametros[4] = t_preparacion;
+                parametros[5] = tipo_producto;
+                parametros[6] = proveedor;
+                if (proveedor > 0)
+                {
+                    respuesta = con.ExecSP("PKG_PRODUCTO.INSERT_PRODUCTO_EXTERNO", parametros);
+                }
+                else
+                {
+                    respuesta = con.ExecSP("PKG_PRODUCTO.INSERT_PRODUCTO_INTERNO", parametros);
+                }
                 return respuesta;
             }
             catch (Exception e)

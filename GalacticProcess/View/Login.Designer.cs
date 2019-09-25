@@ -61,7 +61,7 @@
             this.Panel2.Controls.Add(this.PictureBox1);
             this.bunifuTransition1.SetDecoration(this.Panel2, BunifuAnimatorNS.DecorationType.None);
             this.Panel2.Location = new System.Drawing.Point(31, 16);
-            this.Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.Panel2.Name = "Panel2";
             this.Panel2.Size = new System.Drawing.Size(663, 119);
             this.Panel2.TabIndex = 23;
@@ -87,7 +87,7 @@
             this.panel3.Controls.Add(this.Panel1);
             this.bunifuTransition1.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
             this.panel3.Location = new System.Drawing.Point(13, 137);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(696, 407);
             this.panel3.TabIndex = 24;
@@ -107,7 +107,7 @@
             this.Panel1.Controls.Add(this.Bttn_Login);
             this.bunifuTransition1.SetDecoration(this.Panel1, BunifuAnimatorNS.DecorationType.None);
             this.Panel1.Location = new System.Drawing.Point(8, 6);
-            this.Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(680, 394);
             this.Panel1.TabIndex = 20;
@@ -132,10 +132,10 @@
             // 
             // 
             this.TxtPassword.CustomButton.Image = null;
-            this.TxtPassword.CustomButton.Location = new System.Drawing.Point(241, 2);
-            this.TxtPassword.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtPassword.CustomButton.Location = new System.Drawing.Point(181, 2);
+            this.TxtPassword.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.TxtPassword.CustomButton.Name = "";
-            this.TxtPassword.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.TxtPassword.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.TxtPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TxtPassword.CustomButton.TabIndex = 1;
             this.TxtPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -144,7 +144,7 @@
             this.bunifuTransition1.SetDecoration(this.TxtPassword, BunifuAnimatorNS.DecorationType.None);
             this.TxtPassword.Lines = new string[0];
             this.TxtPassword.Location = new System.Drawing.Point(81, 277);
-            this.TxtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.TxtPassword.MaxLength = 32767;
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '*';
@@ -179,10 +179,10 @@
             // 
             // 
             this.TxtUsername.CustomButton.Image = null;
-            this.TxtUsername.CustomButton.Location = new System.Drawing.Point(241, 2);
-            this.TxtUsername.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtUsername.CustomButton.Location = new System.Drawing.Point(181, 2);
+            this.TxtUsername.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.TxtUsername.CustomButton.Name = "";
-            this.TxtUsername.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.TxtUsername.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.TxtUsername.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TxtUsername.CustomButton.TabIndex = 1;
             this.TxtUsername.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -191,7 +191,7 @@
             this.bunifuTransition1.SetDecoration(this.TxtUsername, BunifuAnimatorNS.DecorationType.None);
             this.TxtUsername.Lines = new string[0];
             this.TxtUsername.Location = new System.Drawing.Point(81, 197);
-            this.TxtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.TxtUsername.MaxLength = 32767;
             this.TxtUsername.Name = "TxtUsername";
             this.TxtUsername.PasswordChar = '\0';
@@ -211,7 +211,7 @@
             this.bunifuTransition1.SetDecoration(this.metroButton1, BunifuAnimatorNS.DecorationType.None);
             this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.metroButton1.Location = new System.Drawing.Point(429, 277);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(4);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(165, 43);
             this.metroButton1.TabIndex = 18;
@@ -225,7 +225,7 @@
             this.bunifuTransition1.SetDecoration(this.PictureBox4, BunifuAnimatorNS.DecorationType.None);
             this.PictureBox4.Image = global::GalacticProcess.Properties.Resources._lock;
             this.PictureBox4.Location = new System.Drawing.Point(351, 277);
-            this.PictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.PictureBox4.Name = "PictureBox4";
             this.PictureBox4.Size = new System.Drawing.Size(49, 43);
             this.PictureBox4.TabIndex = 17;
@@ -236,7 +236,7 @@
             this.bunifuTransition1.SetDecoration(this.PictureBox2, BunifuAnimatorNS.DecorationType.None);
             this.PictureBox2.Image = global::GalacticProcess.Properties.Resources.login;
             this.PictureBox2.Location = new System.Drawing.Point(172, 44);
-            this.PictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.PictureBox2.Name = "PictureBox2";
             this.PictureBox2.Size = new System.Drawing.Size(64, 64);
             this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -261,7 +261,7 @@
             this.bunifuTransition1.SetDecoration(this.PictureBox3, BunifuAnimatorNS.DecorationType.None);
             this.PictureBox3.Image = global::GalacticProcess.Properties.Resources.man;
             this.PictureBox3.Location = new System.Drawing.Point(351, 183);
-            this.PictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.PictureBox3.Name = "PictureBox3";
             this.PictureBox3.Size = new System.Drawing.Size(49, 43);
             this.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -273,11 +273,11 @@
             this.bunifuTransition1.SetDecoration(this.Bttn_Login, BunifuAnimatorNS.DecorationType.None);
             this.Bttn_Login.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.Bttn_Login.Location = new System.Drawing.Point(429, 183);
-            this.Bttn_Login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bttn_Login.Margin = new System.Windows.Forms.Padding(4);
             this.Bttn_Login.Name = "Bttn_Login";
             this.Bttn_Login.Size = new System.Drawing.Size(165, 43);
             this.Bttn_Login.TabIndex = 8;
-            this.Bttn_Login.Text = "Entrarr";
+            this.Bttn_Login.Text = "Entrar";
             this.Bttn_Login.UseSelectable = true;
             this.Bttn_Login.Click += new System.EventHandler(this.Bttn_Login_Click);
             // 
@@ -310,7 +310,7 @@
             this.Controls.Add(this.Panel2);
             this.Controls.Add(this.panel3);
             this.bunifuTransition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.Opacity = 0.9D;
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
