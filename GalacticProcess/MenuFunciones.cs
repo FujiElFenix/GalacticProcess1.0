@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GalacticProcess.View
+namespace GalacticProcess
 {
-    public partial class ModuloRoles : MetroFramework.Forms.MetroForm
+    public partial class MenuFunciones : Form
     {
-        public ModuloRoles()
+        public MenuFunciones()
         {
             InitializeComponent();
-        }
-
-        private void metroListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            akjfkjdhfkjahdkfjha pipe gay
         }
     }
 }
