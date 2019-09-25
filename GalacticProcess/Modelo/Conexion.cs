@@ -26,5 +26,16 @@ namespace GalacticProcess.Modelo
                 return null;
             }
         }
+        public void CerrarConexion()
+        {
+            try
+            {
+                connection = new OracleConnection(oradb);
+            }
+            catch (Exception e)
+            {
+                
+            }
+        }
     }
 }
