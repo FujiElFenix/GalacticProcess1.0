@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalacticProcess.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,11 +31,11 @@ namespace GalacticProcess.Controlador
                 parametros[6] = proveedor;
                 if (proveedor > 0)
                 {
-                    respuesta = con.ExecSP("PKG_PRODUCTO.INSERT_PRODUCTO_EXTERNO", parametros);
+                   // respuesta = con.ExecSP("PKG_PRODUCTO.INSERT_PRODUCTO_EXTERNO", parametros);
                 }
                 else
                 {
-                    respuesta = con.ExecSP("PKG_PRODUCTO.INSERT_PRODUCTO_INTERNO", parametros);
+                    //respuesta = con.ExecSP("PKG_PRODUCTO.INSERT_PRODUCTO_INTERNO", parametros);
                 }
                 return respuesta;
             }
@@ -42,6 +43,11 @@ namespace GalacticProcess.Controlador
             {
                 return 0;
             }
+        }
+
+        internal int RegistrarEmpresa(string rutRutEmpresa, string nombreEmpresa, int telefonoEmpresa, string emailEmpresa, string direccionEmpresa, string nombreImagen, int comuna, int giroComercial)
+        {
+            throw new NotImplementedException();
         }
     }
 }

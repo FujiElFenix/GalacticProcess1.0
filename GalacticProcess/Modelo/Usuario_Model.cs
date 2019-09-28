@@ -23,7 +23,9 @@ namespace GalacticProcess.Modelo
         {
             try
             {
+                
                 OracleCommand cmd = new OracleCommand();
+                
                 cmd.CommandText = "LOGIN_ESCRITORIO";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("PRM_USER", usuario.Username);
@@ -38,6 +40,10 @@ namespace GalacticProcess.Modelo
             catch(Exception e)
             {
                 return 0;
+            }
+            finally
+            {
+                conexion.CerrarConexion();
             }
         }
     }

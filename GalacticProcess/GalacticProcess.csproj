@@ -64,10 +64,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controlador\Conexion.cs" />
     <Compile Include="Controlador\DaoEmpresa.cs" />
     <Compile Include="Controlador\Usuario_Controller.cs" />
     <Compile Include="Entidad\Comuna_CL.cs" />
+    <Compile Include="Entidad\Empresa_CL.cs" />
     <Compile Include="Entidad\GiroComercial_CL.cs" />
     <Compile Include="Entidad\TipoUsuario_CL.cs" />
     <Compile Include="Entidad\Usuario_CL.cs" />
@@ -181,7 +181,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Imagenes\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Bunifu_UI_v1.5.3.dll" />
     <Content Include="View\Imagenes\admin %281%29.png" />
