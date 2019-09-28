@@ -34,6 +34,7 @@ namespace GalacticProcess.Modelo
 
                 cmd.Parameters.Add("PRM_RUT", OracleType.VarChar).Value = empresa.rut_empresa;
                 cmd.Parameters.Add("PRM_NOM", OracleType.VarChar).Value = empresa.nombre_empresa;
+                cmd.Parameters.Add("PRM_IMG", OracleType.VarChar).Value = empresa.imagen_empresa;
                 cmd.Parameters.Add("PRM_TEL", OracleType.Number).Value = empresa.telefono;
                 cmd.Parameters.Add("PRM_EMAIL", OracleType.VarChar).Value = empresa.email;
                 cmd.Parameters.Add("PRM_DIRECCION", OracleType.VarChar).Value = empresa.direccion;
@@ -47,7 +48,7 @@ namespace GalacticProcess.Modelo
             catch (Exception e)
             {
                 return false;
-            } 
+            }
         }
 
         public List<Empresa_CL> ListarEmpresas()
@@ -119,7 +120,54 @@ namespace GalacticProcess.Modelo
             {
                 return null;
             }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
         }
+
+        internal Empresa_CL BuscarEmpresa(int id_empresa)
+        {
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conexion.Conectar();
+                cmd.CommandText = "PKG_EMPRESAS.BUSCAR_EMPRESA";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("EMPRESAS", OracleType.Cursor).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("PRM_ID", OracleType.Number).Value = id_empresa;
+                OracleDataAdapter adaptador = new OracleDataAdapter();
+                adaptador.SelectCommand = cmd;
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                foreach (DataRow dr in tabla.Rows)
+                {
+                    empresa = new Empresa_CL()
+                    {
+                        id_empresa = int.Parse(dr[0].ToString()),
+                        rut_empresa = dr[1].ToString(),
+                        nombre_empresa = dr[2].ToString(),
+                        telefono = int.Parse(dr[3].ToString()),
+                        email = dr[4].ToString(),
+                        direccion = dr[5].ToString(),
+                        imagen_empresa = dr[6].ToString(),
+                        id_comuna = int.Parse(dr[7].ToString()),
+                        id_giro = int.Parse(dr[8].ToString())
+                    };
+                }
+                return empresa;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+        }
+
         public List<GiroComercial_CL> ListarGiros()
         {
             try
@@ -149,6 +197,64 @@ namespace GalacticProcess.Modelo
             catch (Exception e)
             {
                 return null;
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+        }
+
+        internal bool EliminarEmpresa(int id_empresa)
+        {
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conexion.Conectar();
+                cmd.CommandText = "PKG_EMPRESAS.ELIMINAR_EMPRESA";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("PRM_ID", OracleType.Number).Value = id_empresa;
+                cmd.ExecuteNonQuery();
+
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+        }
+
+        internal bool ModificarEmpresa(Empresa_CL empresa)
+        {
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conexion.Conectar();
+                cmd.CommandText = "PKG_EMPRESAS.MODIFICAR_EMPRESA";
+                cmd.CommandType = CommandType.StoredProcedure;
+                
+                cmd.Parameters.Add("PRM_RUT", OracleType.VarChar).Value = empresa.rut_empresa;
+                cmd.Parameters.Add("PRM_NOM", OracleType.VarChar).Value = empresa.nombre_empresa;
+                cmd.Parameters.Add("PRM_TEL", OracleType.Number).Value = empresa.telefono;
+                cmd.Parameters.Add("PRM_IMG", OracleType.VarChar).Value = empresa.imagen_empresa;
+                cmd.Parameters.Add("PRM_EMAIL", OracleType.VarChar).Value = empresa.email;
+                cmd.Parameters.Add("PRM_DIRECCION", OracleType.VarChar).Value = empresa.direccion;
+                cmd.Parameters.Add("PRM_COM", OracleType.Number).Value = empresa.id_comuna;
+                cmd.Parameters.Add("PRM_GIRO", OracleType.Number).Value = empresa.id_giro;
+                cmd.Parameters.Add("PRM_ID", OracleType.Number).Value = empresa.id_empresa;
+                cmd.ExecuteNonQuery();
+
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                return false;
             }
             finally
             {

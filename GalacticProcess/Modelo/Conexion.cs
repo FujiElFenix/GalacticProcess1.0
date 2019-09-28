@@ -15,7 +15,21 @@ namespace GalacticProcess.Modelo
         OracleCommand command = null;
         OracleDataReader reader = null;
 
-        private string oradb = "Data Source=localhost:1521/xe;User Id=galacticfuji;Password=1234";
+        private string oradb = "Data Source=localhost:1521/xe;User Id=pruebasportafolio2;Password=1234";
+
+        public OracleConnection Conectar()
+        {
+            try
+            {
+                connection = new OracleConnection(oradb);
+                connection.Open();
+                return connection;
+            }catch(Exception e)
+            {
+                return null;
+            }
+            
+        }
 
         public DataTable ExecuteQuery(string query)
         {
