@@ -20,8 +20,7 @@ namespace GalacticProcess
         {
             InitializeComponent();
         }
-
-        OracleConnection ora = new OracleConnection("DATA SOURCE = ex; PASSWORD = 1234; USER ID = galacticfuji;");
+        
         private void Bttn_Login_Click(object sender, EventArgs e)
         {
             try
@@ -32,11 +31,17 @@ namespace GalacticProcess
                 int validacion_usuario = controller.ValidarUsuario(user, pass);
                 if (validacion_usuario == 1)
                 {
-                    MessageBox.Show("Admin");
+                    MenuAdministrador administrador = new MenuAdministrador();
+                    this.Hide();
+                    administrador.Show();
+                    MessageBox.Show("Bienvenido Administrador!");
                 }
                 else if (validacion_usuario == 2)
                 {
-                    MessageBox.Show("Diseñador");
+                    MenuDiseñador diseñador = new MenuDiseñador();
+                    this.Hide();
+                    diseñador.Show();
+                    MessageBox.Show("Bienvenido Diseñador!");
                 }
                 else
                 {

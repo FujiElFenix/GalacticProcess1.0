@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GalacticProcess.Entidad;
+using GalacticProcess.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +18,7 @@ namespace GalacticProcess.View
         public ModuloEmpresas()
         {
             InitializeComponent();
+            CargarComboBox();
         }
 
         
@@ -38,6 +41,8 @@ namespace GalacticProcess.View
 
         }
 
+
+
         private void metroButton2_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -50,6 +55,35 @@ namespace GalacticProcess.View
                 nombreImagen = nombreImagen.Remove(0, 1);
                 pbxImgProducto.Tag = nombreImagen;
             }
+        }
+
+        public void CargarComboBox()
+        {
+            //Cargar Comunas
+            Empresa_Model model = new Empresa_Model();
+            List<Comuna_CL> comunas = new List<Comuna_CL>();
+            var dataSourceComunas = new List<Comuna_CL>();
+            comunas = model.ListarComunas();
+            foreach (Comuna_CL item in comunas)
+            {
+                dataSourceComunas.Add(new Comuna_CL() { id_comuna = item.id_comuna, nombre_comuna= item.nombre_comuna});
+            }
+            cboComuna.DataSource = dataSourceComunas;
+            cboComuna.DisplayMember = "nombre_comuna";
+            cboComuna.ValueMember = "id_comuna";
+            //Cargar Giros
+            List<GiroComercial_CL> giros = new List<GiroComercial_CL>();
+            var dataSourceGiros = new List<GiroComercial_CL>();
+            giros = model.ListarGiros();
+            foreach (GiroComercial_CL item in giros)
+            {
+                dataSourceGiros.Add(new GiroComercial_CL() { id_giro = item.id_giro, desc_giro = item.desc_giro });
+            }
+            cboGiro.DataSource = dataSourceGiros;
+            cboGiro.DisplayMember = "desc_giro";
+            cboGiro.ValueMember = "id_giro";
+
+
         }
     }
 }

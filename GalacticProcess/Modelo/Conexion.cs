@@ -12,7 +12,7 @@ namespace GalacticProcess.Modelo
     {
         OracleConnection connection = null;
 
-        private string oradb = "Data Source=localhost:1521/xe;User Id=PRUEBASPORTAFOLIO2;Password=1234";
+        private string oradb = "Data Source=localhost:1521/xe;User Id=galacticfuji;Password=1234";
 
         public OracleConnection Conectar()
         {
@@ -24,6 +24,17 @@ namespace GalacticProcess.Modelo
             }catch(Exception e)
             {
                 return null;
+            }
+        }
+        public void CerrarConexion()
+        {
+            try
+            {
+                connection = new OracleConnection(oradb);
+            }
+            catch (Exception e)
+            {
+                
             }
         }
     }
