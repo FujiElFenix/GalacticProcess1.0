@@ -32,6 +32,8 @@
             this.RegistrarUnidades = new MetroFramework.Controls.MetroTabControl();
             this.Registrar = new MetroFramework.Controls.MetroTabPage();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.BtnRegistrar = new MetroFramework.Controls.MetroButton();
             this.TxtNombre = new MetroFramework.Controls.MetroTextBox();
             this.TxtRut = new MetroFramework.Controls.MetroTextBox();
@@ -39,6 +41,9 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.BtnModificar = new MetroFramework.Controls.MetroButton();
             this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
@@ -51,18 +56,14 @@
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.BtnPizza = new MetroFramework.Controls.MetroTile();
             this.BtnStar = new MetroFramework.Controls.MetroTile();
             this.BtnEasy = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.RegistrarUnidades.SuspendLayout();
             this.Registrar.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -77,7 +78,7 @@
             this.RegistrarUnidades.Controls.Add(this.metroTabPage1);
             this.RegistrarUnidades.Location = new System.Drawing.Point(23, 77);
             this.RegistrarUnidades.Name = "RegistrarUnidades";
-            this.RegistrarUnidades.SelectedIndex = 1;
+            this.RegistrarUnidades.SelectedIndex = 0;
             this.RegistrarUnidades.Size = new System.Drawing.Size(618, 356);
             this.RegistrarUnidades.TabIndex = 1;
             this.RegistrarUnidades.UseSelectable = true;
@@ -99,6 +100,7 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.metroLabel14);
             this.metroPanel1.Controls.Add(this.metroLabel3);
             this.metroPanel1.Controls.Add(this.metroComboBox1);
             this.metroPanel1.Controls.Add(this.BtnRegistrar);
@@ -117,6 +119,25 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(14, 102);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(135, 19);
+            this.metroLabel3.TabIndex = 19;
+            this.metroLabel3.Text = "Unidad Responsable: ";
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Location = new System.Drawing.Point(195, 92);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
+            this.metroComboBox1.TabIndex = 18;
+            this.metroComboBox1.UseSelectable = true;
+            // 
             // BtnRegistrar
             // 
             this.BtnRegistrar.Location = new System.Drawing.Point(146, 159);
@@ -126,6 +147,7 @@
             this.BtnRegistrar.TabIndex = 17;
             this.BtnRegistrar.Text = "Registrar";
             this.BtnRegistrar.UseSelectable = true;
+            this.BtnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
             // TxtNombre
             // 
@@ -192,9 +214,9 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(14, 57);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(162, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(181, 19);
             this.metroLabel2.TabIndex = 10;
-            this.metroLabel2.Text = "Descripcion De La Unidad:";
+            this.metroLabel2.Text = "Empresa a la que pertenece: ";
             // 
             // metroLabel1
             // 
@@ -252,6 +274,34 @@
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
+            // 
+            // metroComboBox2
+            // 
+            this.metroComboBox2.FormattingEnabled = true;
+            this.metroComboBox2.ItemHeight = 23;
+            this.metroComboBox2.Location = new System.Drawing.Point(137, 153);
+            this.metroComboBox2.Name = "metroComboBox2";
+            this.metroComboBox2.Size = new System.Drawing.Size(135, 29);
+            this.metroComboBox2.TabIndex = 26;
+            this.metroComboBox2.UseSelectable = true;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(7, 155);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel7.TabIndex = 25;
+            this.metroLabel7.Text = "Empresa:";
+            // 
+            // metroLabel13
+            // 
+            this.metroLabel13.AutoSize = true;
+            this.metroLabel13.Location = new System.Drawing.Point(7, 39);
+            this.metroLabel13.Name = "metroLabel13";
+            this.metroLabel13.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel13.TabIndex = 24;
+            this.metroLabel13.Text = "Nombre: ";
             // 
             // metroButton1
             // 
@@ -454,14 +504,14 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // metroLabel4
+            // metroLabel12
             // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(28, 97);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(50, 19);
-            this.metroLabel4.TabIndex = 5;
-            this.metroLabel4.Text = "Pintura";
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.Location = new System.Drawing.Point(229, 97);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(44, 19);
+            this.metroLabel12.TabIndex = 7;
+            this.metroLabel12.Text = "Jardin";
             // 
             // metroLabel11
             // 
@@ -472,32 +522,14 @@
             this.metroLabel11.TabIndex = 6;
             this.metroLabel11.Text = "Ferreteria";
             // 
-            // metroLabel12
+            // metroLabel4
             // 
-            this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(229, 97);
-            this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(44, 19);
-            this.metroLabel12.TabIndex = 7;
-            this.metroLabel12.Text = "Jardin";
-            // 
-            // metroLabel13
-            // 
-            this.metroLabel13.AutoSize = true;
-            this.metroLabel13.Location = new System.Drawing.Point(7, 39);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(66, 19);
-            this.metroLabel13.TabIndex = 24;
-            this.metroLabel13.Text = "Nombre: ";
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(7, 155);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(63, 19);
-            this.metroLabel7.TabIndex = 25;
-            this.metroLabel7.Text = "Empresa:";
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(28, 97);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(50, 19);
+            this.metroLabel4.TabIndex = 5;
+            this.metroLabel4.Text = "Pintura";
             // 
             // BtnPizza
             // 
@@ -545,34 +577,14 @@
             this.metroTile1.UseSelectable = true;
             this.metroTile1.UseTileImage = true;
             // 
-            // metroComboBox1
+            // metroLabel14
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(195, 92);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
-            this.metroComboBox1.TabIndex = 18;
-            this.metroComboBox1.UseSelectable = true;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(14, 102);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(63, 19);
-            this.metroLabel3.TabIndex = 19;
-            this.metroLabel3.Text = "Empresa:";
-            // 
-            // metroComboBox2
-            // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Location = new System.Drawing.Point(137, 153);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(135, 29);
-            this.metroComboBox2.TabIndex = 26;
-            this.metroComboBox2.UseSelectable = true;
+            this.metroLabel14.AutoSize = true;
+            this.metroLabel14.Location = new System.Drawing.Point(14, 137);
+            this.metroLabel14.Name = "metroLabel14";
+            this.metroLabel14.Size = new System.Drawing.Size(111, 19);
+            this.metroLabel14.TabIndex = 20;
+            this.metroLabel14.Text = "Imagen Empresa:";
             // 
             // ModuloUnidades
             // 
@@ -632,5 +644,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private MetroFramework.Controls.MetroLabel metroLabel14;
     }
 }

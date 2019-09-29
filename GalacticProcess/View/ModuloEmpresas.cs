@@ -56,7 +56,7 @@ namespace GalacticProcess.View
             if (respuesta) //Si se agrega
             {
                 MessageBox.Show("Empresa Registrada");
-                Bitmap b = new Bitmap(pbxEmpresa2.Image); //Declaramos el objeto con el que manejamos la imágen
+                Bitmap b = new Bitmap(pbxImgEmpresa.Image); //Declaramos el objeto con el que manejamos la imágen
                 string path = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\Imagenes\\" + empresa.imagen_empresa; //Declaramos la ruta
                 if (!File.Exists(path)) //Validamos si la imagen ya existe
                 {
@@ -283,7 +283,7 @@ namespace GalacticProcess.View
             txtRut2.Enabled = true;
             txtNombre2.Enabled = true;
             txtDireccion2.Enabled = true;
-            txtTelefono2.Enabled = true;
+           txtTelefono2.Enabled = true;
             txtCorreo2.Enabled = true;
             cboComuna2.Enabled = true;
             cboGiro2.Enabled = true;

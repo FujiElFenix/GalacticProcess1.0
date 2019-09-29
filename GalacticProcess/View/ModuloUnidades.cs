@@ -16,5 +16,10 @@ namespace GalacticProcess.View
         {
             InitializeComponent();
         }
+
+        private void BtnRegistrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
